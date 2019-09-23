@@ -1,0 +1,34 @@
+<h2>Products</h2>
+  <!-- 
+  To iterate over predefined list of products, *ngFor
+  "ngFor" is a 'structural derivative' adds, removes, 
+  or manipulates the elements to which they are attached
+  -->
+<div *ngFor="let product of products">
+  <h3>
+    <a [title]="product.name + ' details'">
+      <!--
+        Interpolation sytanx: {{}}
+        Renders a property's value as text.
+      -->
+      {{ product.name }}
+    </a>
+  </h3>
+
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+  
+  <!--
+    Event binding for buttons uses a set of parentheses ( ) around the event.
+  -->
+  <button (click)="share()">
+    Share
+  </button>
+
+</div>
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
